@@ -5,28 +5,41 @@
 <head>
   <meta charset="UTF-8">
   <title>MY APP</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-  May Node and Express be with you.
+  Mai Quang Minh 's CRUD App for Quotes
   
-  <ul class="quotes">
-  <% for(var i=0; i<quotes.length; i++) {%>
-    <li class="quote">
-      <span><%= quotes[i].name %></span>
-      <span><%= quotes[i].quote %></span>
-    </li>
-  <% } %>
-</ul>
+  <div class="container">
+      <table class="quotes table table-striped">
+        <% for(var i=0; i<quotes.length; i++) {%>
+          <tr class="quote">
+            <td><%= quotes[i].name %></td>
+            <td><%= quotes[i].quote %></td>
+          </tr>
+        <% } %>
+      <table>
 
- <form action="/quotes" method="POST">
-  <input type="text" placeholder="name" name="name">
-  <input type="text" placeholder="quote" name="quote">
-  <button type="submit">Submit</button>
-</form>
-<div>
-  <h2>Replace last quote written by Master Yoda with a quote written by Darth Vadar</h2>
-  <button id="update"> Darth Vadar invades! </button>
-</div>
+    <form action="/quotes" method="POST" class="form-group">
+      <label for="Inputname">Name</label>
+      <input type="text" placeholder="name" name="name" class="form-control">
+      <label for="InputQuote">Quote</label>
+      <input type="text" placeholder="quote" name="quote" class="form-control">
+      <button type="submit">Submit</button>
+    </form>
+    <div>
+      <h2>Replace </h2>
+      <button id="update"> Update! </button>
+    </div>
+    </div>
+  </div>
 <script src="main.js"></script>
 </body>
 </html>
