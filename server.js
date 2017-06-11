@@ -11,7 +11,7 @@ var db;
 MongoClient.connect('mongodb://quangminh:12345678@ds119682.mlab.com:19682/my-quotes',(err,database)=>{
 	if (err) return console.log(err)
 	  db = database
-	  app.listen(3000, () => {
+	  app.listen(process.env.PORT,'0.0.0.0', () => {
 	    console.log('listening on 3000');
   		});
 });

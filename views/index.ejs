@@ -15,18 +15,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-  Mai Quang Minh 's CRUD App for Quotes
+  <h1 class="page-header">Mai Quang Minh 's CRUD App for Quotes</h1>
   
   <div class="container">
-      <table class="quotes table table-striped">
-        <% for(var i=0; i<quotes.length; i++) {%>
-          <tr class="quote">
-            <td><%= quotes[i].name %></td>
-            <td><%= quotes[i].quote %></td>
-          </tr>
-        <% } %>
-      <table>
-
+      
     <form action="/quotes" method="POST" class="form-group">
       <label for="Inputname">Name</label>
       <input type="text" placeholder="name" name="name" class="form-control">
@@ -34,10 +26,16 @@
       <input type="text" placeholder="quote" name="quote" class="form-control">
       <button type="submit">Submit</button>
     </form>
-    <div>
-      <h2>Replace </h2>
-      <button id="update"> Update! </button>
-    </div>
+
+    <table class="quotes table table-striped">
+        <% for(var i=quotes.length-1; i>0; i--) {%>
+          <tr class="quote">
+            <td><%= quotes[i].name %></td>
+            <td><%= quotes[i].quote %></td>
+          </tr>
+        <% } %>
+      <table>
+
     </div>
   </div>
 <script src="main.js"></script>
